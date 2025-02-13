@@ -104,15 +104,16 @@
     </a-entity>
     <a-entity cursor="rayOrigin: mouse"></a-entity>
     <!-- Movement-->
-    <a-entity id="cameraRig" >
+    <!-- camera rig -->
+    <a-entity id="player">
       <!-- camera -->
-      <a-entity id="head" position="0 1.5 0" camera wasd-controls look-controls></a-entity>
+      <a-entity id="camera" camera wasd-controls look-controls></a-entity>
       <!-- hand controls -->
-      <a-entity teleport-controls="cameraRig: #cameraRig; type: parabolic; button:     trigger;collisionEntities:#floor" oculus-touch-controls="hand: right"></a-entity>
-      <a-entity laser-controls="hand:left" line="color: red"></a-entity>
-   </a-entity>
+      <a-entity id="left-hand" oculus-touch-controls="hand: left" blink-controls></a-entity>
+      <a-entity id="right-hand" oculus-touch-controls="hand: right"></a-entity>
+    </a-entity>
   </a-scene>
-  <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
-</body>
 
+</body>
+<script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
 </html>
