@@ -104,16 +104,23 @@
     </a-entity>
     <a-entity cursor="rayOrigin: mouse"></a-entity>
     <!-- Movement-->
-    <!-- camera rig -->
+  <!-- Camera + controllers rig -->
+  <a-entity id="rig">
+    <a-camera position="0 1.6 0"></a-camera>
+    <a-entity oculus-touch-controls="hand: left" ></a-entity>
+    <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
+  </a-entity>
+    <!-- camera rig 
     <a-entity id="player">
-      <!-- camera -->
+      <camera 
       <a-entity id="camera" camera wasd-controls look-controls></a-entity>
-      <!-- hand controls -->
+    hand controls 
       <a-entity id="left-hand" oculus-touch-controls="hand: left" blink-controls></a-entity>
       <a-entity id="right-hand" oculus-touch-controls="hand: right"></a-entity>
-    </a-entity>
+    </a-entity>-->
   </a-scene>
 
 </body>
-<script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+<script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
+<!--<script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>-->
 </html>
