@@ -13,11 +13,11 @@
 </head>
 
 <body>
-  <a-scene>
+  <a-scene cursor="rayOrigin: mouse>
     <!-- Assets -->
     <a-assets>
       <!-- Video -->
-      <video id="videoclip" loop="true" src="tvAssets/adams_family_intro.mp4" crossorigin="anonymous" preload="auto" title="sourced from YouTube - clip by Ramon Alvarez"></video>
+      <video id="videoclip" loop="true" src="tvAssets/adams_family_intro.mp4" crossorigin="anonymous" preload="auto" alt="sourced from YouTube - clip by Ramon Alvarez"></video>
       <audio id="plinth1" src="tvAssets/skelly.mp3" preload="auto" crossorigin="anonymous"></audio>
       <img id="play" src="tvAssets/btnPlay.png" preload="auto">
       <img id="stop" src="tvAssets/btnStop.png" preload="auto">
@@ -98,7 +98,7 @@
       <a-plane id="videoControls" position="-3.893 0.854 0" scale="2 0.386 1.714" rotation="0 90 0" opacity="1" src="#tv_background">
         <!-- Play button -->
         <a-plane id="vidplaybox" src="#play" class="clickable" scale="0.122 0.678 0.122" position="-0.350 0 .01" shader="flat"  transparent="true" videoplayer></a-plane>
-        <!-- Stop button -->
+        <!-- Pause button -->
         <a-plane id="vidpausebox" src="#pause" class="clickable" scale="0.122 0.678 0.122" position="0.350 0 .01" shader="flat"  transparent="true" videopauser></a-plane>
       </a-plane>
     </a-entity>
@@ -107,7 +107,7 @@
   <!-- Camera + controllers rig -->
   <a-entity id="rig">
     <a-camera position="0 1.6 0"></a-camera>
-    <a-entity oculus-touch-controls="hand: left" raycaster="objects:.clickable"  line="color: red; opacity: 0.75"></a-entity>
+    <a-entity oculus-touch-controls="hand: left" raycaster="showLine: true; far: 10; interval: 0; objects: .clickable, a-link;" line="color: #7cfc00; opacity: 0.5" visible="true"></a-entity>
     <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
   </a-entity>
   </a-scene>
