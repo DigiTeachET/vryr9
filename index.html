@@ -13,11 +13,11 @@
 </head>
 
 <body>
-  <a-scene cursor="rayOrigin: mouse>
+  <a-scene>
     <!-- Assets -->
     <a-assets>
       <!-- Video -->
-      <video id="videoclip" loop="true" src="tvAssets/adams_family_intro.mp4" crossorigin="anonymous" preload="auto" alt="sourced from YouTube - clip by Ramon Alvarez"></video>
+      <video id="videoclip" loop="true" src="tvAssets/adams_family_intro.mp4" crossorigin="anonymous" preload="auto" title="sourced from YouTube - clip by Ramon Alvarez"></video>
       <audio id="plinth1" src="tvAssets/skelly.mp3" preload="auto" crossorigin="anonymous"></audio>
       <img id="play" src="tvAssets/btnPlay.png" preload="auto">
       <img id="stop" src="tvAssets/btnStop.png" preload="auto">
@@ -79,15 +79,15 @@
     <!-- Box to place all the media items on -->
     <a-box id="audio1" scale=".6 .6 0.05" position="2.776 1.711 -3.172" rotation="0 0 0" src="#tv_background" shader="flat">
     <!-- Sound track and Image of art work -->
-      <a-plane id="track1" sound="src: #plinth1; autoplay: false" scale="0.512 0.683 0" position="-0.006 0.070 0.6" shader="flat"></a-plane>
+      <a-plane id="track1" sound="src: #plinth1"  scale="0.512 0.683 0" position="-0.006 0.070 0.6" shader="flat" ></a-plane>
       <a-plane id=”infobox” position="0 0.053 0.644" scale="0.680 3.000 0.01" width=".8" height=".25" color="black" transparent="true" opacity="1" >
         <a-entity color="#191817" text="value: Bob the Skeleton \n \n CAIRO, EGYPT; align:center" position="0 0.007 11.958" scale="2.200 0.800 1.273" shader="flat">
         </a-entity>
       </a-plane>
       <!-- Play Button image -->
-      <a-plane id="playbox" src="#play" class="clickable" scale="0.12 0.12 0.01" position="-0.35 -0.4 0.6" shader="flat" transparent="true" songplayer1 ></a-plane>
+      <a-plane id="playbox" src="#play" scale="0.12 0.12 0.01" position="-0.35 -0.4 0.6" shader="flat" transparent="true" songplayer1 ></a-plane>
       <!-- Stop Button image -->
-      <a-plane id="stopbox" src="#stop" class="clickable" scale="0.12 0.12 0.01" position="0.350 -0.4 0.6" shader="flat"  transparent="true" songstopper1> </a-plane>
+      <a-plane id="stopbox" src="#stop" scale="0.12 0.12 0.01" position="0.350 -0.4 0.6" shader="flat"  transparent="true" songstopper1> </a-plane>
     </a-box> <!-- Closing the Box that holds the media items -->
   
     
@@ -97,9 +97,9 @@
       <!-- TV background -->
       <a-plane id="videoControls" position="-3.893 0.854 0" scale="2 0.386 1.714" rotation="0 90 0" opacity="1" src="#tv_background">
         <!-- Play button -->
-        <a-plane id="vidplaybox" src="#play" class="clickable" scale="0.122 0.678 0.122" position="-0.350 0 .01" shader="flat"  transparent="true" videoplayer></a-plane>
-        <!-- Pause button -->
-        <a-plane id="vidpausebox" src="#pause" class="clickable" scale="0.122 0.678 0.122" position="0.350 0 .01" shader="flat"  transparent="true" videopauser></a-plane>
+        <a-plane id="vidplaybox" src="#play" scale="0.122 0.678 0.122" position="-0.350 0 .01" shader="flat"  transparent="true" videoplayer></a-plane>
+        <!-- Stop button -->
+        <a-plane id="vidpausebox" src="#pause" scale="0.122 0.678 0.122" position="0.350 0 .01" shader="flat"  transparent="true" videopauser></a-plane>
       </a-plane>
     </a-entity>
     <a-entity cursor="rayOrigin: mouse"></a-entity>
@@ -107,11 +107,13 @@
   <!-- Camera + controllers rig -->
   <a-entity id="rig">
     <a-camera position="0 1.6 0"></a-camera>
-    <a-entity oculus-touch-controls="hand: left" raycaster="showLine: true; far: 10; interval: 0; objects: .clickable, a-link;" line="color: #7cfc00; opacity: 0.5" visible="true"></a-entity>
+    <a-entity oculus-touch-controls="hand: left" raycaster="showLine: true; far: 10; interval: 0; objects: .clickable, a-link;" line="color: #7cfc00; opacity: 0.5" visible="true" ></a-entity>
     <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
   </a-entity>
+    
   </a-scene>
 
 </body>
 <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
+
 </html>
