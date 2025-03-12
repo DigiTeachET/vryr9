@@ -85,9 +85,9 @@
         </a-entity>
       </a-plane>
       <!-- Play Button image -->
-      <a-plane id="playbox" src="#play" scale="0.12 0.12 0.01" position="-0.35 -0.4 0.6" shader="flat" transparent="true" songplayer1 ></a-plane>
+      <a-plane id="playbox" src="#play" class="clickable" scale="0.12 0.12 0.01" position="-0.35 -0.4 0.6" shader="flat" transparent="true" songplayer1 ></a-plane>
       <!-- Stop Button image -->
-      <a-plane id="stopbox" src="#stop" scale="0.12 0.12 0.01" position="0.350 -0.4 0.6" shader="flat"  transparent="true" songstopper1> </a-plane>
+      <a-plane id="stopbox" src="#stop" class="clickable" scale="0.12 0.12 0.01" position="0.350 -0.4 0.6" shader="flat"  transparent="true" songstopper1> </a-plane>
     </a-box> <!-- Closing the Box that holds the media items -->
   
     
@@ -97,9 +97,9 @@
       <!-- TV background -->
       <a-plane id="videoControls" position="-3.893 0.854 0" scale="2 0.386 1.714" rotation="0 90 0" opacity="1" src="#tv_background">
         <!-- Play button -->
-        <a-plane id="vidplaybox" src="#play" scale="0.122 0.678 0.122" position="-0.350 0 .01" shader="flat"  transparent="true" videoplayer></a-plane>
+        <a-plane id="vidplaybox" src="#play" class="clickable" scale="0.122 0.678 0.122" position="-0.350 0 .01" shader="flat"  transparent="true" videoplayer></a-plane>
         <!-- Stop button -->
-        <a-plane id="vidpausebox" src="#pause" scale="0.122 0.678 0.122" position="0.350 0 .01" shader="flat"  transparent="true" videopauser></a-plane>
+        <a-plane id="vidpausebox" src="#pause" class="clickable" scale="0.122 0.678 0.122" position="0.350 0 .01" shader="flat"  transparent="true" videopauser></a-plane>
       </a-plane>
     </a-entity>
     <a-entity cursor="rayOrigin: mouse"></a-entity>
@@ -107,20 +107,11 @@
   <!-- Camera + controllers rig -->
   <a-entity id="rig">
     <a-camera position="0 1.6 0"></a-camera>
-    <a-entity oculus-touch-controls="hand: left" ></a-entity>
+    <a-entity oculus-touch-controls="hand: left" raycaster="objects:.clickable"  line="color: red; opacity: 0.75"></a-entity>
     <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
   </a-entity>
-    <!-- camera rig 
-    <a-entity id="player">
-      <camera 
-      <a-entity id="camera" camera wasd-controls look-controls></a-entity>
-    hand controls 
-      <a-entity id="left-hand" oculus-touch-controls="hand: left" blink-controls></a-entity>
-      <a-entity id="right-hand" oculus-touch-controls="hand: right"></a-entity>
-    </a-entity>-->
   </a-scene>
 
 </body>
 <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
-<!--<script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>-->
 </html>
